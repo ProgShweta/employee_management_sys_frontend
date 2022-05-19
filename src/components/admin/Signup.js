@@ -19,7 +19,7 @@ const Signup = () => {
     if (input.password.length >= 8) {
       axios
         .post(
-          "https://employee-management-system-backend.vercel.app/admin/signup",
+          "http://localhost:8000/admin/signup",
           input
         )
         .then((response) => setAlert(response.data));
@@ -30,7 +30,8 @@ const Signup = () => {
   return (
     <>
       <div>
-        <h2>Admin Signup</h2>
+        <h2 >Admin Signup</h2>
+        <div className="signup" style={{height:'400px',width:'700px',backgroundColor:'#99e7ff'}}>
         <form onSubmit={submitHandler}>
           <input
             name="firstName"
@@ -56,7 +57,7 @@ const Signup = () => {
             placeholder="Password"
             onChange={inputHandler}
           />
-          <button>Signup</button>
+          <button style={{backgroundColor:'#385663',color:'white'}}>Signup</button>
           {alert && (
             <div className="alert-message">
               <p>{alert}</p>
@@ -71,8 +72,10 @@ const Signup = () => {
             </div>
           )}
         </form>
+        </div>
       </div>
     </>
+    
   );
 };
 

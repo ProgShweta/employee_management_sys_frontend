@@ -1,11 +1,7 @@
 import "./AddEmployee.css";
-
 import { useState } from "react";
-
 import axios from "axios";
-
 import { useNavigate } from "react-router-dom";
-
 import { connect } from "react-redux";
 
 const AddEmployee = ({ getToken }) => {
@@ -25,7 +21,7 @@ const AddEmployee = ({ getToken }) => {
     if (input.password.length >= 8) {
       axios
         .post(
-          "https://employee-management-system-backend.vercel.app/admin/add",
+          "http://localhost:8000/admin/add",
           input,
           {
             headers: {
@@ -38,13 +34,14 @@ const AddEmployee = ({ getToken }) => {
           navigate("/admin/dashboard");
         });
     } else {
-      alert("Password length must be 8 characters");
+      alert("use 8 length for");
     }
   };
   return (
     <>
       <div className="add-employee">
         <h1>Add Employee</h1>
+        <div className="addemp" style={{height:'400px',width:'700px',backgroundColor:'#99e7ff'}}>
         <form onSubmit={submitHandler}>
           <input
             name="firstName"
@@ -70,8 +67,9 @@ const AddEmployee = ({ getToken }) => {
             placeholder="Password"
             onChange={inputHandler}
           />
-          <button>Add Employee</button>
+          <button style={{backgroundColor:'#385663',color:'white'}}>Add Employee here</button>
         </form>
+      </div>
       </div>
     </>
   );

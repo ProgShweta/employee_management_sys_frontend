@@ -19,7 +19,7 @@ const Signin = ({ setToken, setAdmin }) => {
     event.preventDefault();
     axios
       .post(
-        "https://employee-management-system-backend.vercel.app/admin/signin",
+        "http://localhost:8000/admin/signin",
         input
       )
       .then((response) => {
@@ -32,6 +32,7 @@ const Signin = ({ setToken, setAdmin }) => {
     <>
       <div>
         <h2>Admin Signin</h2>
+        
         <form onSubmit={submitHandler}>
           <input
             name="email"
@@ -45,9 +46,10 @@ const Signin = ({ setToken, setAdmin }) => {
             placeholder="Password"
             onChange={inputHandler}
           />
-          <button>Signin</button>
+          <button style={{backgroundColor:'#385663',color:'white'}}>Signin</button>
         </form>
-      </div>
+        </div>
+    
     </>
   );
 };

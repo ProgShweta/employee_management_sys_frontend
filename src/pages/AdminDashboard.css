@@ -6,14 +6,12 @@
 .admin-dashboard h1 {
   text-align: center;
 }
-
 .employee-details,
 .employee {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin-bottom: 1rem;
 }
-
 .edit,
 .delete {
   cursor: pointer;
